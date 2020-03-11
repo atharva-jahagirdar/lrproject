@@ -1,0 +1,5 @@
+package com.example.mongoExample.controller;
+
+public class StudentController {
+
+}

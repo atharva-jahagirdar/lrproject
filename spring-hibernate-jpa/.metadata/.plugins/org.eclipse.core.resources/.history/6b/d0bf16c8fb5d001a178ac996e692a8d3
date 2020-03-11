@@ -1,0 +1,28 @@
+package com.example.mongoExample.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.mongoExample.model.Student;
+import com.example.mongoExample.repository.StudentRepository;
+
+@RestController
+@RequestMapping("/rest")
+public class StudentController {
+
+	@Autowired
+	StudentRepository studentRepository;
+	
+	
+	@PostMapping(value="/save")
+	public String saveStudent(@RequestBody Student student)
+	{
+		 studentRepository.save(student);
+		 return "added student with id"+student.getId();
+		
+	}
+}

@@ -1,0 +1,5 @@
+package com.example.mongoExample.repository;
+
+public class StudentRepository {
+
+}
